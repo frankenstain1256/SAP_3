@@ -1,0 +1,35 @@
+managed implementation in class zbp_shs2_i_product unique;
+//strict ( 1 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZSHS2_I_PRODUCT //alias <alias_name>
+persistent table zshs2_d_product
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( readonly, numbering : managed ) ProdUuid;
+  field ( readonly ) createdby, creationtime, changedby, changetime;
+  field ( mandatory ) prodid, pgid, price, pricecurrency;
+  create;
+  update;
+  delete;
+
+  mapping for ZSHS2_D_PRODUCT
+  {
+    produuid = prod_uuid;
+    prodid = prodid;
+    pgid = pgid;
+    phaseid = phaseid;
+    height = height;
+    depth = depth;
+    width = width;
+    sizeuom = size_uom;
+    price = price;
+    pricecurrency = price_currency;
+    taxrate = taxrate;
+    createdby = created_by;
+    creationtime = creation_time;
+    changedby = changed_by;
+    changetime = change_time;
+  }
+}

@@ -1,0 +1,104 @@
+@Metadata.layer: #CORE
+annotate view ZSHS2_C_PRODUCT
+  with 
+{
+  @UI.facet: [
+  {
+  purpose: #HEADER,
+  position: 20,
+  type: #DATAPOINT_REFERENCE,
+  targetQualifier: 'KitchenAppliance'
+  },
+  {
+  id: 'GeneralInformation',
+  type: #COLLECTION,
+  position: 10,
+  targetQualifier: 'GeneralInformation',
+  label: 'General Information'
+  },
+  {
+  label: 'Basic Data',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'GeneralInformation',
+  targetQualifier: 'BasicData',
+  position: 10
+  },
+  {
+  label: 'Size Dimensions',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'GeneralInformation',
+  targetQualifier: 'SizeDimensions',
+  position: 20
+  },
+  {
+  label: 'Price Details',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'GeneralInformation',
+  targetQualifier: 'PriceDetails',
+  position: 30
+  },
+  {
+  id: 'AdminData',
+  type: #COLLECTION,
+  position: 20,
+  targetQualifier: 'AdminData',
+  label: 'Admin Data'
+  },
+  {
+  label: 'Create Info',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'AdminData',
+  targetQualifier: 'CreateInfo',
+  position: 10
+  },
+  {
+  label: 'Change Info',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'AdminData',
+  targetQualifier: 'ChangeInfo',
+  position: 20
+  }
+  ]
+  
+//  ProdUuid;
+  @UI.identification: [{ position: 10 }]
+  @UI.dataPoint: { qualifier: 'KitchenAppliance', title: 'Product ID' }
+  @UI.fieldGroup: [{ qualifier: 'BasicData', position: 10 }]
+  Prodid;
+  @UI.fieldGroup: [{ qualifier: 'BasicData', position: 20 }]
+  Pgid;
+  @UI.fieldGroup: [{ qualifier: 'BasicData', position: 30 }]
+  Phaseid;
+  @UI.fieldGroup: [{ qualifier: 'SizeDimensions', position: 10 }]
+  Height;
+  @UI.fieldGroup: [{ qualifier: 'SizeDimensions', position: 20 }]
+  Depth;
+  @UI.fieldGroup: [{ qualifier: 'SizeDimensions', position: 30 }]
+  Width;
+//  SizeUom;
+  @UI.identification: [{ position: 20 }]
+  @UI.dataPoint: { qualifier: 'KitchenAppliance', title: 'Net Price' }
+  @UI.fieldGroup: [{ qualifier: 'PriceDetails', position: 10 }]
+  Price;
+  @UI.fieldGroup: [{ qualifier: 'PriceDetails', position: 20 }]
+  PriceCurrency;
+  @UI.identification: [{ position: 30 }]
+//  @UI.dataPoint: { qualifier: 'KitchenAppliance', title: 'Tax Rate' }
+  @UI.fieldGroup: [{ qualifier: 'PriceDetails', position: 30 }]
+  Taxrate;
+  @UI.fieldGroup: [{ qualifier: 'CreateInfo', position: 10 }]
+  CreatedBy;
+  @UI.fieldGroup: [{ qualifier: 'CreateInfo', position: 20 }]
+  CreationTime;
+  @UI.fieldGroup: [{ qualifier: 'ChangeInfo', position: 10 }]
+  ChangedBy;
+  @UI.fieldGroup: [{ qualifier: 'ChangeInfo', position: 20 }]
+  ChangeTime;
+  
+//  @UI.selectionField: [{ position: 10 }]
+}
